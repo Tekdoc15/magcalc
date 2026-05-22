@@ -25,16 +25,17 @@ fn main() {
     if args.iter().any(|a| a == "--help" || a == "-h") {
         println!("Saturation calculator for ungapped core");
         println!("DO NOT USE IF YOUR CORE HAS AN AIRGAP");
-        println!("Usage: {} [B_sat] [l_e] [N] [mu_r]", args[0]);
+        println!("Usage: {} [B_sat] [l_e] [N] [mu_r] [delta_mu_r]", args[0]);
         println!();
         println!("Arguments (positional, all optional — omitted args will be prompted):");
         println!("  B_sat   Saturation flux density     (T)");
         println!("  l_e     Effective magnetic path length  (m)");
         println!("  N       Number of turns             (dimensionless)");
         println!("  mu_r    Initial relative permeability");
+        println!("  delta_mu_r    % Change in permeability");
         println!();
         println!("Example:");
-        println!("  {} 0.35 0.072 30 2000", args[0]);
+        println!("  {} 0.35 0.072 30 2000 0.06", args[0]);
         println!();
         println!("Output:");
         println!("  I_sat   Saturation current          (A)");
@@ -47,6 +48,7 @@ fn main() {
     let l_e = get_or_prompt(&args, 2, "Effective Length (m)");
     let n   = get_or_prompt(&args, 3, "Number of turns");
     let mu_r   = get_or_prompt(&args, 4, "Initial permeability");
+    let delta_mu_r = get_or_prompt(&args, 5, "% Change in permeability");
     
     // Calculate I_sat
     let i_sat = (b_sat * l_e) / (n * mu_o * mu_r);
