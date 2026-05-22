@@ -52,5 +52,5 @@ fn main() {
     let i_sat = (b_sat * l_e) / (n * mu_o * mu_r);
 
 
-    println!("I_sat in A is: {}", i_sat);
+    println!("I_sat in A is: {:.3}", i_sat);
 }
