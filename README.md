@@ -1,4 +1,6 @@
-Saturation Current Calcuator
+Saturation Current Calcuator\
+
+This calculator is only for use when doing calculations on an ungapped core. If you are trying to run the math for a core that has an airgap you will need to modify it quite a bit to get it to work right for your needs.\
 
 Why is this a thing?\
 I needed to check the saturation current values of a bunch of different magnetic cores for a project. After doing a bunch by hand I decided to just build this to speed things up.
